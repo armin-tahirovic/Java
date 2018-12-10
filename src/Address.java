@@ -6,6 +6,7 @@ public class Address {
 
     ArrayList<String> addresses = new ArrayList<>();
 
+
     public Address() {
         Address address = new Address();
     }
