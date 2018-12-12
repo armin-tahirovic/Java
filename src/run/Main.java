@@ -9,37 +9,35 @@ import java.util.List;
 public class Main {
 
 
-    public static void main(String args[]) {
 
-        List<User> userList = new ArrayList<>();
-        ArrayList<Meter> meterList = new ArrayList();
-        ArrayList<String> addressList = new ArrayList<>();
+    public static void main(String args[]) {
 
         User user1 = new User(111,"sep1",true);
         User user2 = new User(222,"NICO",false);
         User user3 = new User(333,"armin",false);
         User user4 = new User(444,"OsCar",true);
 
-        Address address1 = new Address("");
-        address1.addAddress("Horsens");
-        System.out.println(address1.addressList.get(0));
+        Domain apartment = new Domain();
+        apartment.addApartment();
+        apartment.getApartmentList().get(0).setMeterList(apartment.apartmentList.get(0).getMeterList());
+        apartment.apartmentList.get(0).addAddress("Horsens");
+        System.out.println(apartment.apartmentList.get(0).getAddressList().get(0));
 
 
 
         LocalDate today = LocalDate.now();
-        Meter meter = new Meter(new ArrayList<>(), "flow", 5);
-        ArrayList<Reading> readings = new ArrayList<>();
-        meter.addReading(10, "heat", today);
-        meter.addMeter(readings, "heat", 10);
+        apartment.apartmentList.get(0).addMeter("heat", 10);
+        apartment.apartmentList.get(0).getMeterList().get(0).addReading(10, "heat", today);
 
-        String otut = meter.generateOutput();
+
+        String otut = apartment.apartmentList.get(0).getMeterList().get(0).generateOutput();
         System.out.println(otut);
 
-        meter.setNr(19);
-        meter.setMeasureType("Oscar");
-        System.out.println(meter.generateOutput());
+        apartment.apartmentList.get(0).getMeterList().get(0).setNr(19);
+        apartment.apartmentList.get(0).getMeterList().get(0).setMeasureType("Oscar");
+        System.out.println(apartment.apartmentList.get(0).getMeterList().get(0).generateOutput());
 
-        UserList list = new UserList();
+        Apartment list = new Apartment();
         list.addUser(user1);
         list.addUser(user2);
         list.addUser(user3);
@@ -48,14 +46,6 @@ public class Main {
 
 
         System.out.println(list);
-
-        Apartment apartment = new Apartment(meterList,addressList,userList);
-        apartment.addApartment(meterList,addressList,userList);
-        int x = 0;
-        Consumption consumption = new Consumption(x);
-        x = consumption.calculateAllConsumption();
-        System.out.println(x);
-
     }
 
 }

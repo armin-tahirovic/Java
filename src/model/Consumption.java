@@ -9,19 +9,14 @@ public class Consumption {
         this.consumption = consumption;
     }
 
-    public int calculateAllConsumption() {
+    public int calculateAllConsumption(int apartmentNumber) {
         int x;
-        int z;
 
-        Apartment apartment = new Apartment(new ArrayList<>(), new ArrayList<>(), new ArrayList<>());
-        apartment.getMeterList().size();
-        System.out.println();
+        Domain list = new Domain();
 
-        for (z = 0; z < apartment.getApartmentList().size(); z++) {
-            for (x = 0; x < apartment.getApartmentList().get(z).getMeterList().size(); x++) {
-                consumption = consumption + apartment.getMeterList().get(x).allValues();
+            for (x = 0; x < list.apartmentList.get(apartmentNumber).getMeterList().size(); x++) {
+                consumption = consumption + list.apartmentList.get(apartmentNumber).getMeterList().get(x).allValues();
             }
-        }
         return consumption;
     }
 

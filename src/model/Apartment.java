@@ -5,28 +5,15 @@ import java.util.List;
 
 public class Apartment {
     private ArrayList<Meter> meterList;
-    private ArrayList<String> addresses;
-    private List<User> userList;
-    private ArrayList<Apartment> apartmentList = new ArrayList<>();
+    private ArrayList<String> addressList;
+    private ArrayList<User> userList;
 
 
-    public Apartment(ArrayList<Meter> meterList, ArrayList<String> addresses, List<User> userList) {
-        this.meterList = meterList;
-        this.addresses = addresses;
-        this.userList = userList;
-    }
 
-    public void addApartment(ArrayList<Meter> meterList, ArrayList<String> addresses, List<User> userList) {
-        Apartment apartment = new Apartment(meterList,addresses,userList);
-        apartmentList.add(apartment);
-    }
-
-    public ArrayList<Apartment> getApartmentList() {
-        return apartmentList;
-    }
-
-    public void setApartmentList(ArrayList<Apartment> apartmentList) {
-        this.apartmentList = apartmentList;
+    public Apartment() {
+        this.meterList = new ArrayList<>();
+        this.addressList = new ArrayList<>();
+        this.userList = new ArrayList<>();
     }
 
     public ArrayList<Meter> getMeterList() {
@@ -37,19 +24,37 @@ public class Apartment {
         this.meterList = meterList;
     }
 
-    public ArrayList<String> getAddresses() {
-        return addresses;
+    public void addMeter(String measureType, int nr){
+        Meter meter=new Meter(measureType, nr);
+        meterList.add(meter);
+    }
+
+    public ArrayList<String> getAddressList() {
+        return addressList;
     }
 
     public void setAddresses(ArrayList<String> addresses) {
-        this.addresses = addresses;
+        this.addressList = addresses;
+    }
+
+    public void addAddress(String address) {
+        addressList.add(address);
     }
 
     public List<User> getUserList() {
         return userList;
     }
 
-    public void setUserList(List<User> userList) {
+    public void setUserList(ArrayList<User> userList) {
         this.userList = userList;
+    }
+
+    public void addUser(User user){
+        userList.add(user);
+    }
+
+    public String toString() {
+        return
+                userList + "\n";
     }
 }
