@@ -1,4 +1,4 @@
-package sample;
+package model;
 
 public class User {
     private int number;
@@ -12,7 +12,7 @@ public class User {
     }
     public String toString() {
         return
-                "User:"+ "\n" + "Name = " + number + "\n" + "Password = " + pw + "\n" + "Super User = " + superUser + "\n";
+                "model.User:"+ "\n" + "Name = " + number + "\n" + "Password = " + pw + "\n" + "Super model.User = " + superUser + "\n";
     }
 
 }

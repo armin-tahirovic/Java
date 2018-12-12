@@ -1,6 +1,8 @@
+package model;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.LinkedList;
+
 
 public class Meter {
     private ArrayList<Reading> readings=new ArrayList();
@@ -12,6 +14,15 @@ public class Meter {
         this.readings=readings;
         this.measureType=measureType;
         this.nr=nr;
+    }
+
+    public int allValues(){
+        int x;
+        int allValues=0;
+        for (x=0; x<readings.size(); x++){
+            allValues=allValues+readings.get(x).getValue();
+        }
+        return allValues;
     }
 
 
@@ -31,6 +42,14 @@ public class Meter {
         return nr;
     }
 
+    public void setMeasureType(String measureType) {
+        this.measureType = measureType;
+    }
+
+    public String getMeasureType() {
+        return measureType;
+    }
+
     public void addReading(int value, String type, LocalDate date){
         Reading reading = new Reading(value, type, date);
         readings.add(reading);
@@ -41,7 +60,9 @@ public class Meter {
         meterList.add(meter);
     }
 
-
+    public ArrayList<Meter> getMeterList() {
+        return meterList;
+    }
 
     public String generateOutput(){
 
