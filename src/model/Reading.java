@@ -9,9 +9,9 @@ public class Reading {
     private LocalDate date;
 
     public Reading(int value, String type, LocalDate date){
-        this.value=value;
-        this.type=type;
-        this.date=date;
+        this.value = value;
+        this.type = type;
+        this.date = date;
     }
 
     public void setValue(int value) {

@@ -9,7 +9,6 @@ import java.util.List;
 public class Main {
 
 
-
     public static void main(String args[]) {
 
         User user1 = new User(111,"sep1",true);
@@ -33,7 +32,7 @@ public class Main {
         String otut = apartment.apartmentList.get(0).getMeterList().get(0).generateOutput();
         System.out.println(otut);
 
-        apartment.apartmentList.get(0).getMeterList().get(0).setNr(19);
+        apartment.apartmentList.get(0).getMeterList().get(0).setNr(18);
         apartment.apartmentList.get(0).getMeterList().get(0).setMeasureType("Oscar");
         System.out.println(apartment.apartmentList.get(0).getMeterList().get(0).generateOutput());
 
@@ -42,13 +41,33 @@ public class Main {
         list.addUser(user2);
         list.addUser(user3);
         list.addUser(user4);
+        apartment.apartmentList.add(list);
 
-        apartment.apartmentList.get(0).getMeterList().get(0).addReading(15, "Armin", today);
+        apartment.apartmentList.get(1).addMeter("heat", 5);
+        apartment.apartmentList.get(1).getMeterList().get(0).addReading(10, "heat", today);
+        list.getMeterList().get(0).addReading(10,"heat",today);
 
         Consumption consumption = new Consumption();
         System.out.println(consumption.calculateAllConsumption(0, apartment));
 
         System.out.println(apartment.apartmentList.get(0).getMeterList().get(0).generateLastOutput());
+
+        System.out.println("hej");
+
+        int apartmentNumber = 0;
+       // apartment.apartmentList.get(apartmentNumber).deleteMeter(18,apartmentNumber,apartment);
+
+       // apartment.apartmentList.get(apartmentNumber).deleteMeter2(18);
+
+
+
+        System.out.println(list.getMeterList().get(0).generateOutput());
+        System.out.println("hej");
+
+        list.deleteMeter(18);
+
+        System.out.println(apartment.apartmentList.get(1).getMeterList().get(0).generateOutput());
+        System.out.println(apartment.apartmentList.get(0).getMeterList().get(0).generateOutput());
 
 
         System.out.println(list);

@@ -29,6 +29,15 @@ public class Apartment {
         meterList.add(meter);
     }
 
+
+    public void deleteMeter(int nr) {
+        for (int x = 0; x < meterList.size(); x++) {
+            if (meterList.get(x).getNr() == nr) {
+                meterList.remove(x);
+            }
+        }
+    }
+
     public ArrayList<String> getAddressList() {
         return addressList;
     }
