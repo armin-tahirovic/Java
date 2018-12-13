@@ -1,6 +1,7 @@
 package model;
 
 import java.time.LocalDate;
+import java.time.Month;
 import java.util.ArrayList;
 
 
@@ -23,6 +24,11 @@ public class Meter {
         }
         return allValues;
     }
+
+    //public LocalDate date(LocalDate date){
+      //  date = readings.get(date).getDate();
+        //return date;
+    //}
 
 
     public ArrayList getReadings() {
