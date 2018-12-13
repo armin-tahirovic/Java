@@ -10,6 +10,19 @@ public class User {
         this.pw = pw;
         this.superUser = superUser;
     }
+
+    public int getNumber() {
+        return number;
+    }
+
+    public String getPw() {
+        return pw;
+    }
+
+    public boolean isSuperUser() {
+        return superUser;
+    }
+
     public String toString() {
         return
                 "model.User:"+ "\n" + "Name = " + number + "\n" + "Password = " + pw + "\n" + "Super model.User = " + superUser + "\n";

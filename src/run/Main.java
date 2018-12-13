@@ -43,6 +43,12 @@ public class Main {
         list.addUser(user3);
         list.addUser(user4);
 
+        apartment.apartmentList.get(0).getMeterList().get(0).addReading(15, "Armin", today);
+
+        Consumption consumption = new Consumption();
+        System.out.println(consumption.calculateAllConsumption(0, apartment));
+
+        System.out.println(apartment.apartmentList.get(0).getMeterList().get(0).generateLastOutput());
 
 
         System.out.println(list);

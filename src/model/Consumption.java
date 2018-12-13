@@ -4,25 +4,24 @@ import java.util.ArrayList;
 
 public class Consumption {
     private int consumption;
+    private Reading lastReading;
 
-    public Consumption(int consumption) {
+    public Consumption() {
         this.consumption = consumption;
     }
 
-    public int calculateAllConsumption(int apartmentNumber) {
-        int x;
+    public int calculateAllConsumption(int apartmentNumber, Domain apartment) {
 
-        Domain list = new Domain();
-
-            for (x = 0; x < list.apartmentList.get(apartmentNumber).getMeterList().size(); x++) {
-                consumption = consumption + list.apartmentList.get(apartmentNumber).getMeterList().get(x).allValues();
+            for (int x = 0; x < apartment.apartmentList.get(apartmentNumber).getMeterList().size(); x++) {
+                consumption = consumption + apartment.apartmentList.get(apartmentNumber).getMeterList().get(x).allValues();
             }
         return consumption;
     }
 
 
-    public int lastMeasure(){
-        return consumption;
+    public Reading lastReading(int apartmentNumber, Domain apartment){
+        lastReading = (Reading) apartment.apartmentList.get(apartmentNumber).getMeterList().get(0).getReadings().get(0);
+        return lastReading;
     }
 
 
