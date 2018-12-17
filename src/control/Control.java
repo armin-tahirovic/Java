@@ -46,5 +46,9 @@ public class Control {
         apartmentList.add(apartment);
     }
 
+    public Control getControl(Control control) {
+        return control;
+    }
+
 }
 

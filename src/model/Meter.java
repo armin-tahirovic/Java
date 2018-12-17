@@ -25,6 +25,13 @@ public class Meter {
         this.readings = readings;
     }
 
+    public int getMeterValues() {
+        int consumptionReading = 0;
+        for (int readingNr = 0; readingNr < readings.size(); readingNr++) {
+            consumptionReading = consumptionReading + readings.get(readingNr).getValue();
+        }
+        return consumptionReading;
+    }
 
     public int getNr() {
         return nr;
@@ -32,6 +39,10 @@ public class Meter {
 
     public void setNr(int nr) {
         this.nr = nr;
+    }
+
+    public LocalDate getdate(int y) {
+        return readings.get(y).getDate();
     }
 
     public boolean isStatus() {

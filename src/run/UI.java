@@ -16,6 +16,7 @@ import model.*;
 
 import java.io.IOException;
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Comparator;
 
@@ -112,6 +113,11 @@ public class UI extends Application {
         apartments.add(apartment1);
 
         Control.inst().setApartmentList(apartments);
+
+        Domain domain = new Domain();
+
+        Consumption consumption = new Consumption();
+        consumption.calculateDayConsumption(1, domain, LocalDate.now());
 
         launch(args);
     }
