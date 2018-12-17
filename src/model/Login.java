@@ -14,7 +14,7 @@ public class Login {
 
     public boolean checkUserPw(int apartmentNumber, Domain apartment, int userNumber, String userPw) {
 
-        if (apartment.apartmentList.get(apartmentNumber).getUserList().get(userNumber).getPw() == userPw) {
+        if (apartment.apartmentList.get(apartmentNumber).getUserList().get(userNumber).getPassWord() == userPw) {
             return true;
         } else {
             return false;
