@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="TabPane" prefHeight="400.0" prefWidth="600.0" stylesheets="@css/styles.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.EditPage">
+   <Pane prefHeight="415.0" prefWidth="236.0" />
+   <Pane layoutX="232.0" prefHeight="415.0" prefWidth="236.0">
+      <children>
+         <GridPane prefHeight="415.0" prefWidth="236.0">
+           <columnConstraints>
+             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+           </columnConstraints>
+           <rowConstraints>
+             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+           </rowConstraints>
+            <children>
+               <TextField fx:id="usernameField" maxHeight="25.0" maxWidth="110.0" prefHeight="25.0" prefWidth="50.0" promptText="username..." GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+               <TextField fx:id="pwField" maxHeight="25.0" maxWidth="110.0" prefHeight="25.0" prefWidth="110.0" promptText="password..." GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+               <TextField fx:id="aptField" maxWidth="110.0" prefHeight="25.0" prefWidth="112.0" promptText="apartment..." GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+               <TextField fx:id="meterField" maxWidth="110.0" prefWidth="81.0" promptText="meter..." GridPane.halignment="CENTER" GridPane.rowIndex="5" />
+               <Button fx:id="createUser" mnemonicParsing="false" onAction="#createMeter" prefHeight="25.0" prefWidth="110.0" text="Create " GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER" />
+                  <Label alignment="TOP_CENTER" text="Meters" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                      <font>
+                          <Font size="30.0" />
+                      </font>
+                  </Label>
+            </children>
+            <padding>
+               <Insets left="15.0" right="15.0" />
+            </padding>
+         </GridPane>
+      </children></Pane>
+   <Pane layoutX="464.0" prefHeight="417.0" prefWidth="236.0">
+      <children>
+         <GridPane layoutY="1.0" prefHeight="417.0" prefWidth="236.0">
+            <columnConstraints>
+               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            </columnConstraints>
+            <rowConstraints>
+               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+               <TextField fx:id="meterField2" maxWidth="110.0" prefWidth="110.0" promptText="meter..." GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+               <TextField fx:id="pwField2" maxWidth="110.0" prefWidth="81.0" promptText="your password..." GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+               <Button fx:id="deactivateMeter" maxWidth="80.0" mnemonicParsing="false" onAction="#deactivateMeter" prefHeight="25.0" prefWidth="80.0" text="Deactivate " GridPane.halignment="RIGHT" GridPane.rowIndex="6">
+                  <GridPane.margin>
+                     <Insets right="15.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button fx:id="deleteBtn" maxWidth="80.0" mnemonicParsing="false" onAction="#deleteMeter" text="Delete" GridPane.halignment="LEFT" GridPane.rowIndex="6">
+                  <GridPane.margin>
+                     <Insets left="15.0" />
+                  </GridPane.margin>
+               </Button>
+            </children>
+            <padding>
+               <Insets left="15.0" right="15.0" />
+            </padding>
+         </GridPane>
+      </children></Pane>
+    <GridPane prefHeight="128.0" prefWidth="236.0">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="139.0" minWidth="10.0" prefWidth="139.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="97.0" minWidth="10.0" prefWidth="67.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+        <children>
+            <Label prefHeight="17.0" prefWidth="148.0" text="Currently Logged In:">
+                <GridPane.margin>
+                    <Insets />
+                </GridPane.margin>
+            </Label>
+            <Label fx:id="currentUserLabel" focusTraversable="false" prefHeight="17.0" prefWidth="141.0" GridPane.rowIndex="1" />
+            <Label fx:id="currentAddressLabel" prefHeight="17.0" prefWidth="114.0" GridPane.rowIndex="2" />
+        </children>
+        <padding>
+            <Insets left="15.0" right="15.0" />
+        </padding>
+    </GridPane>
+</AnchorPane>

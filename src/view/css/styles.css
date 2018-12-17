@@ -1,0 +1,61 @@
+#Log-In-Box{
+
+    -fx-background-color: #e26136;
+}
+
+#Forgot-password{
+
+    -fx-text-fill: black;
+}
+
+.Body{
+    -fx-background-image: url(../img/background-img.jpg);
+}
+
+#Log-In-Button{
+    -fx-background-color: #e24714;
+    -fx-text-fill: black;
+}
+
+#Log-In-Button:hover{
+    -fx-background-color: #e88868;
+    -fx-background-insets: 0 0 -1 0, 0, 1, 2;
+    -fx-background-radius: 3px, 3px, 2px, 1px;
+}
+
+#Username-field{
+    -fx-background-color: #e26136;
+    -fx-text-fill: black;
+    -fx-border-color: black;
+    -fx-border-width: 0 0 1 0px;
+}
+
+#Password-field{
+    -fx-background-color: #e26136;
+    -fx-text-fill: black;
+    -fx-border-color: black;
+    -fx-border-width: 0 0 1 0px;
+}
+
+#Tool-bar{
+    -fx-background-color: #e26136;
+}
+
+.Toolbar-btn{
+    -fx-background-color: #e26136;
+}
+.Toolbar-btn:hover{
+    -fx-background-color: #e88868;
+    -fx-background-insets: 0 0 -1 0, 0, 1, 2;
+    -fx-background-radius: 3px, 3px, 2px, 1px;
+}
+
+#TabPane{
+    -fx-background-color: #ffffff;
+}
+.Tab{
+    -fx-background-color: #ffffff;
+}
+
+
+
