@@ -4,53 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Apartment {
-    private ArrayList<Meter> meterList;
-    private ArrayList<String> addressList;
     private ArrayList<User> userList;
+    private int apartmentNr;
 
-
-
-    public Apartment() {
-        this.meterList = new ArrayList<>();
-        this.addressList = new ArrayList<>();
-        this.userList = new ArrayList<>();
+    public Apartment(int apartmentNr) {
+        this.apartmentNr = apartmentNr;
     }
 
-    public ArrayList<Meter> getMeterList() {
-        return meterList;
-    }
-
-    public void setMeterList(ArrayList<Meter> meterList) {
-        this.meterList = meterList;
-    }
-
-    public void addMeter(String measureType, int nr){
-        Meter meter=new Meter(measureType, nr);
-        meterList.add(meter);
-    }
-
-
-    public void deleteMeter(int nr) {
-        for (int x = 0; x < meterList.size(); x++) {
-            if (meterList.get(x).getNr() == nr) {
-                meterList.remove(x);
-            }
-        }
-    }
-
-    public ArrayList<String> getAddressList() {
-        return addressList;
-    }
-
-    public void setAddresses(ArrayList<String> addresses) {
-        this.addressList = addresses;
-    }
-
-    public void addAddress(String address) {
-        addressList.add(address);
-    }
-
-    public List<User> getUserList() {
+    public ArrayList<User> getUserList() {
         return userList;
     }
 
@@ -58,12 +19,16 @@ public class Apartment {
         this.userList = userList;
     }
 
-    public void addUser(User user){
-        userList.add(user);
+    public int getApartmentNr() {
+        return apartmentNr;
     }
 
+    public void setApartmentNr(int apartmentNr) {
+        this.apartmentNr = apartmentNr;
+    }
+
+    @Override
     public String toString() {
-        return
-                userList + "\n";
+        return "Apartment "+ apartmentNr +"\n" + "userList: " + "\n" + userList;
     }
 }

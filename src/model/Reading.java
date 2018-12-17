@@ -35,4 +35,8 @@ public class Reading {
         return type;
     }
 
+    @Override
+    public String toString() {
+        return value + " " + type + ", " + date +"\n";
+    }
 }

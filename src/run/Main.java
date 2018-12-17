@@ -1,10 +1,11 @@
+/*
+
 package run;
 
+import control.Control;
 import model.*;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
 
 public class Main {
 
@@ -16,8 +17,10 @@ public class Main {
         User user3 = new User(333,"armin",false);
         User user4 = new User(444,"OsCar",true);
 
+        Apartment apartment2 = new Apartment();
+
         Domain apartment = new Domain();
-        apartment.addApartment();
+        apartment.addApartment(apartment2);
         apartment.getApartmentList().get(0).setMeterList(apartment.apartmentList.get(0).getMeterList());
         apartment.apartmentList.get(0).addAddress("Horsens");
         System.out.println(apartment.apartmentList.get(0).getAddressList().get(0));
@@ -64,6 +67,14 @@ public class Main {
         System.out.println(list.getMeterList().get(0).generateOutput());
         System.out.println("hej");
 
+        apartment.addApartment(apartment2);
+        apartment.getApartmentList().get(2).addMeter("bib",1);
+        apartment.getApartmentList().get(2).getMeterList().get(0).addReading(5,"abe",today);
+
+//        System.out.println(consumption.calculateDayConsumption(2,apartment,today));
+
+        System.out.println("hej");
+
         list.deleteMeter(18);
 
         System.out.println(apartment.apartmentList.get(1).getMeterList().get(0).generateOutput());
@@ -71,6 +82,11 @@ public class Main {
 
 
         System.out.println(list);
+
+
+
+
     }
 
 }
+*/

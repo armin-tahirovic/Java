@@ -6,43 +6,25 @@ import java.util.ArrayList;
 
 
 public class Meter {
-    private ArrayList<Reading> readings = new ArrayList();
-    private String measureType;
+    private ArrayList<Reading> readings;
+
     private int nr;
+    private boolean active;
 
-    public Meter(String measureType, int nr){
-        this.readings = new ArrayList<>();
-        this.measureType = measureType;
+
+    public Meter( int nr, boolean active) {
         this.nr = nr;
+        this.active = active;
     }
 
-    public int allValues(){
-        int x;
-        int allValues = 0;
-        for (x = 0; x < readings.size(); x++){
-            allValues = allValues+readings.get(x).getValue();
-        }
-        return allValues;
-    }
-
-    //public LocalDate date(LocalDate date){
-      //  date = readings.get(date).getDate();
-        //return date;
-    //}
-
-
-    public ArrayList getReadings() {
+    public ArrayList<Reading> getReadings() {
         return readings;
     }
 
-    public void setReadings(ArrayList readings) {
+    public void setReadings(ArrayList<Reading> readings) {
         this.readings = readings;
     }
 
-    public void addReading(int value, String type, LocalDate date){
-        Reading reading = new Reading(value, type, date);
-        readings.add(reading);
-    }
 
     public int getNr() {
         return nr;
@@ -52,12 +34,12 @@ public class Meter {
         this.nr = nr;
     }
 
-    public String getMeasureType() {
-        return measureType;
+    public boolean isStatus() {
+        return active;
     }
 
-    public void setMeasureType(String measureType) {
-        this.measureType = measureType;
+    public void setStatus(boolean status) {
+        this.active = status;
     }
 
     public String generateOutput(){
@@ -69,28 +51,17 @@ public class Meter {
             int value = reading.getValue();
             String type = reading.getType();
             LocalDate date = reading.getDate();
-            String measureType = this.measureType;
             int number = this.nr;
-            output = date + ", " + value + ", " + type + ", " + measureType + ", " + number + "\r\n";
+            output = date + ", " + value + ", " + type + "\r\n";
             allOutput.append(output);
 
         }
         return allOutput.toString();
     }
 
-    public String generateLastOutput(){
 
-        StringBuilder allOutput = new StringBuilder();
-
-            String output;
-            int value = readings.get(readings.size()-1).getValue();
-            String type = readings.get(readings.size()-1).getType();
-            LocalDate date = readings.get(readings.size()-1).getDate();
-            String measureType = this.measureType;
-            int number = this.nr;
-            output = date + ", " + value + ", " + type + ", " + measureType + ", " + number + "\r\n";
-            allOutput.append(output);
-
-        return allOutput.toString();
+    @Override
+    public String toString() {
+        return ""+ nr + ", Active: " + active ;
     }
 }
