@@ -1,13 +1,11 @@
 package model;
 
 import java.time.LocalDate;
-import java.time.Month;
 import java.util.ArrayList;
 
 
 public class Meter {
     private ArrayList<Reading> readings;
-
     private int nr;
     private boolean active;
 

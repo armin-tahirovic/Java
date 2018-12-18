@@ -28,7 +28,7 @@ public class Consumption {
 
     public int calculateDayConsumption(int apartmentNumber, Domain apartment, LocalDate date) {
 
-        consumption=0;
+        consumption = 0;
         for (int x = 0; x < apartment.apartmentList.get(apartmentNumber).getUserList().size(); x++) {
             int y = 0;
             for (y = 0; y < apartment.apartmentList.get(apartmentNumber).getUserList().get(x).getMeter().getReadings().size(); y++);{
