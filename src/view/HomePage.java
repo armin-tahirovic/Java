@@ -4,6 +4,8 @@ import control.Control;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+
+import java.io.IOException;
 import java.time.LocalDate;
 public class HomePage {
 
@@ -42,19 +44,25 @@ public class HomePage {
     @FXML
     void showConsumption (ActionEvent event){
 
-        consumptionArea.setText("");
-        LocalDate date = fromDP.getValue();
-        // Alt consumption som virker
-        consumptionArea.setText("" + Control.inst().getApartmentList().get(0).getUserList().get(Integer.parseInt(aptNrField.getText())-1).getMeter().getReadings().toString());
+        try {
 
-        // Et for-loop der burde lave en ny liste baseret på den dato man vælger
-        /*ArrayList<Reading> newList = new ArrayList<>();
-        for(Reading reading: Control.inst().getApartmentList().get(0).getUserList().get(Integer.parseInt(aptNrField.getText())-1).getMeter().getReadings()){
+            consumptionArea.setText("");
+            LocalDate date = fromDP.getValue();
+            // Alt consumption som virker
+            consumptionArea.setText("" + Control.inst().getApartmentList().get(0).getUserList().get(Integer.parseInt(aptNrField.getText()) - 1).getMeter().getReadings().toString());
+
+            // Et for-loop der burde lave en ny liste baseret på den dato man vælger
+            /*ArrayList<Reading> newList = new ArrayList<>();
+            for(Reading reading: Control.inst().getApartmentList().get(0).getUserList().get(Integer.parseInt(aptNrField.getText())-1).getMeter().getReadings()){
             if (date == reading.getDate()){
                 newList.add(reading);
             }
+            }
+            consumptionArea.setText("" + newList.toString());*/
         }
-        consumptionArea.setText("" + newList.toString());*/
+        catch (Exception e) {
+            consumptionArea.setText("Fejl skriv 1-3");
+        }
     }
 
     @FXML

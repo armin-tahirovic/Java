@@ -45,10 +45,5 @@ public class Control {
     public void addApartment(Apartment apartment) {
         apartmentList.add(apartment);
     }
-
-    public Control getControl(Control control) {
-        return control;
-    }
-
 }
 

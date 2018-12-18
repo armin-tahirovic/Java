@@ -48,28 +48,45 @@ public class EditPage {
 
     @FXML
     void createMeter(ActionEvent event){
-        Meter meter = new Meter(Integer.parseInt(meterField.getText()),true);
-        User user = new User(Integer.parseInt(usernameField.getText()),pwField.getText(),false,Control.inst().getApartmentList().get(0).getUserList().get(0).getAddress(),aptField.getText(),meter);
-        Control.inst().getApartmentList().get(0).getUserList().add(user);
-        usernameField.setText("");
-        pwField.setText("");
-        aptField.setText("");
-        meterField.setText("");
-    }
-    @FXML
-    void deactivateMeter(ActionEvent event){
-        if (pwField2.getText().equals(Control.inst().getApartmentList().get(0).getUserList().get(0).getPassWord())){
-            Control.inst().getApartmentList().get(0).getUserList().get(Integer.parseInt(meterField2.getText())-1).getMeter().setStatus(false);
-            pwField2.setText("");
-            meterField2.setText("");
+        try {
+
+            Meter meter = new Meter(Integer.parseInt(meterField.getText()), true);
+            User user = new User(Integer.parseInt(usernameField.getText()), pwField.getText(), false, Control.inst().getApartmentList().get(0).getUserList().get(0).getAddress(), aptField.getText(), meter);
+            Control.inst().getApartmentList().get(0).getUserList().add(user);
+            usernameField.setText("");
+            pwField.setText("");
+            aptField.setText("");
+            meterField.setText("");
+        }
+        catch (Exception e) {
+            usernameField.setText("Skal være tal");
+            pwField.setText("Fejl");
+            aptField.setText("Fejl");
+            meterField.setText("Skal være tal");
         }
     }
     @FXML
+    void deactivateMeter(ActionEvent event){
+
+            if (pwField2.getText().equals(Control.inst().getApartmentList().get(0).getUserList().get(0).getPassWord())) {
+                Control.inst().getApartmentList().get(0).getUserList().get(Integer.parseInt(meterField2.getText()) - 1).getMeter().setStatus(false);
+                pwField2.setText("");
+                meterField2.setText("");
+            } else {
+                pwField2.setText("Skriv din kode");
+                meterField2.setText("Skriv meter i liste");
+            }
+    }
+    @FXML
     void deleteMeter(ActionEvent event){
-        if (pwField2.getText().equals(Control.inst().getApartmentList().get(0).getUserList().get(0).getPassWord())){
-            Control.inst().getApartmentList().get(0).getUserList().remove(Integer.parseInt(meterField2.getText())-1);
-            pwField2.setText("");
-            meterField2.setText("");
+
+            if (pwField2.getText().equals(Control.inst().getApartmentList().get(0).getUserList().get(0).getPassWord())) {
+                Control.inst().getApartmentList().get(0).getUserList().remove(Integer.parseInt(meterField2.getText()) - 1);
+                pwField2.setText("");
+                meterField2.setText("");
+            } else {
+            pwField2.setText("Skriv din kode");
+            meterField2.setText("Skriv den meter der er i listen");
         }
     }
 }
